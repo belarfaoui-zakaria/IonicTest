@@ -1,19 +1,16 @@
-<ion-header>
+  <ion-header>
     <ion-navbar color="primary">
       <ion-title>
-        Medikit
+        Medicaments
       </ion-title>
     </ion-navbar>
-  </ion-header>
-  
-  <ion-content padding>
-      <ion-header>
-        <ion-searchbar animated=true
-        autocomplete=true placeholder="Rechercher.."
-         (ionInput)="getItems($event)"></ion-searchbar>
-      </ion-header>  
 
-      Edited by zakaria
-       
-      
+  </ion-header>
+
+  <ion-content padding>
+    <ion-searchbar animated=true autocomplete=true placeholder="Rechercher.." (ionInput)="getItems($event)"></ion-searchbar>  
+
+    <!-- <ion-item ng-repeat="medicament in medicaments">
+      {{ medicament.nom }}
+    </ion-item>  -->
   </ion-content>
