@@ -8,9 +8,17 @@
   </ion-header>
 
   <ion-content padding>
-    <ion-searchbar animated=true autocomplete=true placeholder="Rechercher.." (ionInput)="getItems($event)"></ion-searchbar>  
+    <ion-searchbar [(ngModel)]="searchText" animated=true autocomplete=true placeholder="Rechercher.."></ion-searchbar>  
 
-    <!-- <ion-item ng-repeat="medicament in medicaments">
-      {{ medicament.nom }}
-    </ion-item>  -->
+    <ion-item *ngFor="let medicament of medicaments | filter : searchText">
+      <div class="notification-icon">
+          <ion-icon name="notifications" large></ion-icon>
+      </div>
+
+      <div class="item-content">
+          <h2><strong>{{ medicament.name }}</strong></h2>
+          <h3> <small> Expire dans {{ medicament.expiration }}</small></h3>
+      </div>
+
+    </ion-item> 
   </ion-content>

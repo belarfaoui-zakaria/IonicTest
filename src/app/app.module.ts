@@ -11,7 +11,7 @@ import { SettingsPage } from '../pages/settings/settings';
 import { TabsPage } from '../pages/tabs/tabs';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner'
 import { LocalNotifications } from '@ionic-native/local-notifications';
-
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     HomePage,
     MedikitPage,
     SettingsPage,
-    TabsPage
+    TabsPage,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

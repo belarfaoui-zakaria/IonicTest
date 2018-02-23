@@ -1,0 +1,27 @@
+ion-item{
+
+    .item-content{
+        float: left;
+        width: 80%;
+        padding: 10px 20px;
+        strong{
+            color: #455A64;
+        }
+        h3{
+            color: #555;
+        }
+    }
+
+    .notification-icon{
+        text-align: center;
+        width: 80px;
+        float: left;
+        ion-icon{
+            font-size: 35px;
+            color: #2196F3;
+            padding: 10px 20px;
+            // border: 1px solid black;
+        }
+    }
+
+}
