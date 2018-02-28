@@ -12,6 +12,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner'
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { FilterPipe } from './filter.pipe';
+import { DatamatrixMedicamentData } from './datamatrix.medicament.data'
 
 @NgModule({
   declarations: [
@@ -43,4 +44,9 @@ import { FilterPipe } from './filter.pipe';
   ]
 })
 
-export class AppModule {}
+export class AppModule {
+  constructor(){
+     var result = new DatamatrixMedicamentData(String.fromCharCode(29)+"10628315"+String.fromCharCode(29)+"010340093324795917140801");
+  
+  }
+}

@@ -3,18 +3,35 @@ import { Component } from '@angular/core';
 import { MedikitPage } from '../medikit/medikit';
 import { SettingsPage } from '../settings/settings';
 import { HomePage } from '../home/home';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner'
+import { Platform } from 'ionic-angular';
 
 @Component({
   selector: "tab-page",
   templateUrl: 'tabs.html'
 })
+
 export class TabsPage {
 
   tab2Root = HomePage;
   tab1Root = MedikitPage;
   tab3Root = SettingsPage;
+  private platform: Platform; 
+  private barcodescanner: BarcodeScanner;
 
-  constructor() {
+  constructor(platform: Platform, barcodescanner: BarcodeScanner) {
+    this.platform = platform;
+    this.barcodescanner = barcodescanner;
+  }
 
+  scan(){
+    console.log("start scanning...")
+    this.platform.ready().then( () =>{
+      this.barcodescanner.scan({
+        formats: "DATA_MATRIX",
+      }).then((result) => {
+        console.log(result);
+      })
+    })
   }
 }
