@@ -12,7 +12,9 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner'
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { FilterPipe } from './filter.pipe';
-import { DatamatrixMedicamentData } from './datamatrix.medicament.data'
+import { DatamatrixMedicamentData } from './datamatrix.medicament.data';
+import { ScanDetailPage } from '../pages/scan-detail/scan-detail';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { DatamatrixMedicamentData } from './datamatrix.medicament.data'
     MedikitPage,
     SettingsPage,
     TabsPage,
-    FilterPipe
+    FilterPipe,
+    ScanDetailPage
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { DatamatrixMedicamentData } from './datamatrix.medicament.data'
     HomePage,
     MedikitPage,
     SettingsPage,
-    TabsPage
+    TabsPage,
+    ScanDetailPage
   ],
   providers: [
     BarcodeScanner,
@@ -46,7 +50,6 @@ import { DatamatrixMedicamentData } from './datamatrix.medicament.data'
 
 export class AppModule {
   constructor(){
-     var result = new DatamatrixMedicamentData(String.fromCharCode(29)+"10628315"+String.fromCharCode(29)+"010340093324795917140801");
-  
+    
   }
 }

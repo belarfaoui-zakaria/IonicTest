@@ -15,7 +15,7 @@ export class CodeParser{
         // Find AI
         var aicount = this.gs1definitions.length;
         var aidefinition = null;
-        for (var i = 0; i < aicount; i++) {
+        for (let i = 0; i < aicount; i++) {
             var aidefinitiontemp = this.gs1definitions[i];
             var aistring = barcode.substring(curpos, (curpos + aidefinitiontemp.code.length));
             if (aistring == aidefinitiontemp.code) {
@@ -55,7 +55,7 @@ export class CodeParser{
                 // Split data
                 var aidatablockcount = aidefinition.datablocks.length
                 var listOfValues = [];
-                for (var x = 0; x < aidatablockcount; x++) {
+                for (let x = 0; x < aidatablockcount; x++) {
                     var aidatablock = aidefinition.datablocks[x];
                     var returnValue = this.barcodeExtractor(barcode, curpos, aidatablock);
                     listOfValues[x] = returnValue[0];
@@ -79,14 +79,15 @@ export class CodeParser{
 
     valueFormatting(aidefinition, listOfValues) {
         // format values
+        // let commaKey = null;
+        var commaKey;
         switch (aidefinition.format) {
             case "none":
                 // no formatting requiered
                 break;
             case "currency":
             case "comma":
-                var commaKey = null;
-                for (var key in listOfValues) {
+                for (let key in listOfValues) {
                     if (commaKey == null) {
                         commaKey = key;
                     } else {
@@ -97,25 +98,24 @@ export class CodeParser{
                 listOfValues.splice(0, 1);
                 break;
             case "date": //YYMMDD
-                for (var key in listOfValues) {
-                    var year = "20" + listOfValues[key].substring(0, 2);
-                    var month = listOfValues[key].substring(2, 4);
-                    var day = listOfValues[key].substring(4, 6);
+                for (let key in listOfValues) {
+                    let year = "20" + listOfValues[key].substring(0, 2);
+                    let month = listOfValues[key].substring(2, 4);
+                    let day = listOfValues[key].substring(4, 6);
                     listOfValues[key] =  moment(new Date(year + "/" + month + "/" + day)); // move value to correct decimal point
                 }
                 break;
             case "datetime":
-                for (var key in listOfValues) {
-                    var year = "20" + listOfValues[key].substring(0, 2);
-                    var month = listOfValues[key].substring(2, 4);
-                    var day = listOfValues[key].substring(4, 6);
+                for (let key in listOfValues) {
+                    let year = "20" + listOfValues[key].substring(0, 2);
+                    let month = listOfValues[key].substring(2, 4);
+                    let day = listOfValues[key].substring(4, 6);
                     listOfValues[key] = new Date(year + "/" + month + "/" + day); // move value to correct decimal point
                 }
                 break;
             case "isocurrency":
-                var commaKey = null;
-                var isoKey = null;
-                for (var key in listOfValues) {
+                let isoKey = null;
+                for (let key in listOfValues) {
                     if (commaKey == null) {
                         commaKey = key;
                     } else if (isoKey == null) {

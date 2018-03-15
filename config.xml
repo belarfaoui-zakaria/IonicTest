@@ -11,6 +11,9 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
+        <string>Pour scanner le Qr-Code sur les médicaments</string>
+    </edit-config>
     <preference name="ScrollEnabled" value="false" />
     <preference name="android-minSdkVersion" value="16" />
     <preference name="BackupWebStorage" value="none" />
@@ -83,7 +86,9 @@
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="phonegap-plugin-barcodescanner" spec="^7.0.2" />
     <plugin name="cordova-plugin-local-notification" spec="^0.9.0-beta.2" />
-    <engine name="browser" spec="~5.0.3" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.1" />
-    <engine name="android" spec="~7.0.0" />
+    <engine name="android" spec="7.0.0" />
+    <engine name="browser" spec="5.0.3" />
+    <engine name="ios" spec="~4.5.4" />
+    <allow-navigation href="http://192.168.1.13:8100" />
 </widget>
