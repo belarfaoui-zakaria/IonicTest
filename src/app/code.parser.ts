@@ -1,6 +1,6 @@
 import * as moment from 'moment';
 export class CodeParser{
-
+   
     private gs1separator = String.fromCharCode(29);
 
     constructor(){

@@ -92,3 +92,5 @@
     <engine name="ios" spec="~4.5.4" />
     <allow-navigation href="http://192.168.1.13:8100" />
 </widget>
+<preference name="SplashScreenDelay" value="0"/>
+<preference name="ShowSplashScreen" value="false"/>

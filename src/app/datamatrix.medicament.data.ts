@@ -1,5 +1,5 @@
 import { CodeParser } from './code.parser'
-
+export {CodeParser}
 export class DatamatrixMedicamentData{
     private expiration;
     private cip7: string;
