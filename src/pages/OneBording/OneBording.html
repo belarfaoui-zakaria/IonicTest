@@ -1,0 +1,29 @@
+<ion-content>
+    <ion-slides pager  (ionSlideDidChange)="slideChanged()">
+  
+        <ion-slide style="background-image: url('../assets/imgs/allah5.png') ">
+            <div>
+              <h2>Medicaments</h2>
+              <p>Vous trouvez la liste des médicaments avec possibilité de chercher d'autres médicaments de la base.</p>
+            </div>
+          </ion-slide>
+      
+          <ion-slide style="background-image: url('../assets/imgs/allah.png') ">
+            
+           <div>
+              <h2>Scanner QR Code</h2>
+              <p>Vous pouvez chercher votre médicaments grace au smart QR Code Scanner facilement.</p>
+            </div>
+          </ion-slide>
+      
+          <ion-slide style="background-image: url('../assets/imgs/allah4.png') ">
+             
+    
+            <div>
+              <h2>Coordonnés</h2>
+              <p>Avoir tout les coordonnés de médicament scanné avec la date d'éxpiration.</p>
+            </div>
+          </ion-slide>
+       </ion-slides>
+       <button (click)="skip()" id="skip">{{ skipMsg }}</button>
+  </ion-content>

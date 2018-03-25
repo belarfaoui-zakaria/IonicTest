@@ -5,7 +5,7 @@ import { SettingsPage } from '../settings/settings';
 import { HomePage } from '../home/home';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner'
 import { Platform } from 'ionic-angular';
-import { ScanDetailPage } from '../scan-detail/scan-detail';
+import { OneBordingPage } from '../OneBording/OneBording';
 @Component({
   selector: "tab-page",
   templateUrl: 'tabs.html'
@@ -16,7 +16,7 @@ export class TabsPage {
   tab2Root = HomePage;
   tab1Root = MedikitPage;
   tab3Root = SettingsPage;
-  tab4Root = ScanDetailPage;
+  tab4Root = OneBordingPage;
   private platform: Platform; 
   private barcodescanner: BarcodeScanner;
 

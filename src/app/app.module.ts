@@ -7,24 +7,27 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { MedikitPage } from '../pages/medikit/medikit';
+
 import { SettingsPage } from '../pages/settings/settings';
 import { TabsPage } from '../pages/tabs/tabs';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner'
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { FilterPipe } from './filter.pipe';
 import { DatamatrixMedicamentData } from './datamatrix.medicament.data';
-import { ScanDetailPage } from '../pages/scan-detail/scan-detail';
+import { OneBordingPage } from '../pages/OneBording/OneBording';
 
+ 
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
+    HomePage,  
     MedikitPage,
     SettingsPage,
     TabsPage,
     FilterPipe,
-    ScanDetailPage
+    OneBordingPage,
+ 
   ],
   imports: [
     BrowserModule,
@@ -33,11 +36,12 @@ import { ScanDetailPage } from '../pages/scan-detail/scan-detail';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
+    HomePage, 
     MedikitPage,
     SettingsPage,
     TabsPage,
-    ScanDetailPage
+    OneBordingPage,
+   
   ],
   providers: [
     BarcodeScanner,
