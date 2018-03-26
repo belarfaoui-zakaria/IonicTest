@@ -13,7 +13,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner'
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { FilterPipe } from './filter.pipe';
-import { DatamatrixMedicamentData } from './datamatrix.medicament.data';
+//import { DatamatrixMedicamentData } from './datamatrix.medicament.data';
 import { OneBordingPage } from '../pages/OneBording/OneBording';
 
  
