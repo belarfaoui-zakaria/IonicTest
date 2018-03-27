@@ -10,16 +10,16 @@ import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 import { MedikitPage } from '../pages/medikit/medikit';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { OneBordingPage } from '../pages/OneBording/OneBording';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = TabsPage;
+  rootPage:any = OneBordingPage;
   showSplash = true; // <-- show animation
-  @ViewChild(Slides) slides: Slides;
-  skipMsg: string = "Skip";
-  @ViewChild(NavController) navCtrl: NavController; 
+
+ 
   
   
 
@@ -45,24 +45,16 @@ export class MyApp {
     initializeApp() {
       this.platform.ready().then(() => {
   
-       // this.statusBar.styleDefault();
+        this.statusBar.styleDefault();
         this.splashScreen.hide();  // <-- hide static image
   
-        timer(700).subscribe(() => this.showSplash = false) // <-- hide animation after 3s
+        timer(7000).subscribe(() => this.showSplash = false) // <-- hide animation after 3s
       });
-   /* }
-    skip() {
-      this.navCtrl.push(this.rootPage);
     }
-    slideChanged() {
-      if (this.slides.isEnd())
-        this.skipMsg = "Alright, I got it";
-    }
-    ionViewDidLoad() {
-      console.log('ionViewDidLoad MyApp');
-    }*/
+   
+    
   }
-    }
+    
   
   
  
