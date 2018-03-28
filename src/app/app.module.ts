@@ -12,9 +12,13 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner'
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { FilterPipe } from './filter.pipe';
-import { DatamatrixMedicamentData } from './datamatrix.medicament.data';
+// import { DatamatrixMedicamentData } from './datamatrix.medicament.data';
 import { ScanDetailPage } from '../pages/scan-detail/scan-detail';
-
+import { SQLite } from '@ionic-native/sqlite';
+// import { DatabaseProvider } from '../providers/database';
+import { DatabaseProvider } from '../providers/database/database';
+import { IonicStorageModule } from '@ionic/storage';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -24,11 +28,13 @@ import { ScanDetailPage } from '../pages/scan-detail/scan-detail';
     SettingsPage,
     TabsPage,
     FilterPipe,
-    ScanDetailPage
+    ScanDetailPage,
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpModule,
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -43,8 +49,10 @@ import { ScanDetailPage } from '../pages/scan-detail/scan-detail';
     BarcodeScanner,
     LocalNotifications,
     StatusBar,
+    SQLite,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    DatabaseProvider,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })
 
