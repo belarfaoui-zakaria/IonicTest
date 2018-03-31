@@ -37,7 +37,7 @@ export class MedicamentPage {
            console.log(medicament)
            if(medicament.is_new){
                var date = moment(this.medicament.date_expiration);
-               date.setHours(23,59,59,999)
+               date.hours(23)
               this.presentToast();
               this.localNotifications.schedule({
                 id: this.medicament.id,
@@ -71,7 +71,7 @@ export class MedicamentPage {
       console.log('Dismissed toast');
     });
 
-    let hideFooterTimeout = setTimeout( () => {
+    setTimeout( () => {
          toast.present();
     }, 1000);
     
