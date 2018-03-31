@@ -53,3 +53,15 @@ CREATE TABLE CIS_COMPOSITION_BDPM(
   NUMERO_LIAISON_SA_FT VARCHAR(255),
   FOREIGN KEY(CIS) REFERENCES CIS_BDPM(CIS)
 );
+
+CREATE TABLE medicaments(
+  cis varchar(255) primary key,
+  cip varchar(255),
+  date_expiration varchar(255),
+  nombre INTEGER
+)
+
+CREATE INDEX cis_medicament_index on medicaments( cis )
+CREATE INDEX cip_medicament_index on medicaments( cip )
+CREATE INDEX date_expiration_medicament_index on medicaments( date_expiration )
+ 

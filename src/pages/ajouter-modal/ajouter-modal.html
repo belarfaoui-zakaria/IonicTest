@@ -1,0 +1,37 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons left>
+        <button style="color:white;" ion-button icon-only (click)="viewCtrl.dismiss()">
+            <ion-icon name="arrow-back"></ion-icon>
+        </button>
+    </ion-buttons>
+
+    <ion-title>
+      Date d'expiration
+    </ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+
+   <div style="margin: 30px 0;">
+      <ion-item>
+        <ion-label>Date (*): </ion-label>
+        <ion-datetime placeholder="Date d'expiration requis" displayFormat="DD-MM-YYYY" min="2018-05-01" max="2100-01-01" [(ngModel)]="expiration_date"></ion-datetime>
+      </ion-item>      
+    </div>
+
+
+
+  <button style="width:100%" color="primary" [disabled]="!expiration_date" ion-button item-end icon-left (click)="add()">
+    <ion-icon name="plus"></ion-icon>
+    Ajoutez ce médicament à ma liste
+  </button>
+</ion-content>

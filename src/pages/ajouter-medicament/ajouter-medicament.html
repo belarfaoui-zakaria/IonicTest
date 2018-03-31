@@ -1,0 +1,37 @@
+
+<ion-header>
+
+  <ion-navbar>
+
+    <ion-title>
+      Ajouter un médicaments
+    </ion-title>
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="searchText" (ionInput)="search($event)" animated=true autocomplete=true placeholder="Rechercher.."></ion-searchbar>  
+ 
+  <ion-scroll style="width:100%;height:80%" scrollY="true">
+    <ion-col scroll="true">
+      <ion-item *ngFor="let medicament of results">
+        <div class="item-content">
+
+              <h2><strong>{{ medicament.DENOMINATION }}</strong></h2>
+              <h3> <small>{{ medicament.LIBELLE_PRESENTATION }}</small></h3>              
+ 
+            <button (click)="add(medicament)" style="width:100%" color="primary" ion-button item-end icon-left>
+              <ion-icon name="plus"></ion-icon>
+              Ajoutez ce médicament à ma liste 
+            </button>
+        </div>
+      </ion-item>
+    </ion-col>
+  </ion-scroll>
+ 
+  
+
+</ion-content>
+

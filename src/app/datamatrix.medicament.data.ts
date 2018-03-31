@@ -1,4 +1,6 @@
 import { CodeParser } from './code.parser'
+import { DatabaseProvider } from '../providers/database/database';
+
 export {CodeParser}
 export class DatamatrixMedicamentData{
     private expiration;
@@ -8,7 +10,7 @@ export class DatamatrixMedicamentData{
     private prefix: string;
     private lotnumber;
 
-    constructor(code: string){
+    constructor(private code: string){
         var result = new CodeParser().parse(code);
         this.cip13 = result["01"][0].toString();
         this.cip9 = this.cip13.substr(-9)
@@ -19,8 +21,23 @@ export class DatamatrixMedicamentData{
         console.log(this)
     }
 
+    getCode(){
+        return this.code;
+    }
+
     getCip(){
         return this.cip7;
+    }
+
+    getCis(_database: DatabaseProvider){
+        let sql = "select CIS, CIP7, LIBELLE_PRESENTATION FROM CIS_CIP_BDPM where cip7 = ?";
+        return _database.execute(sql, [this.cip7]).then(e => {
+          return e.rows.item(0);
+        })
+    }
+
+    getMedicament(){
+
     }
 
     getLotNumber(){
