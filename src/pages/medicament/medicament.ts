@@ -4,6 +4,7 @@ import { DatabaseProvider } from '../../providers/database/database';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { ToastController } from 'ionic-angular';
 import { MedikitPage } from '../medikit/medikit';
+import * as moment from 'moment';
 /**
  * Generated class for the MedicamentPage page.
  *
