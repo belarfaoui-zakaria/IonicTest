@@ -5,11 +5,12 @@ import { Medicament } from '../../app/models/medicament'
 import * as moment from 'moment';
 import { DatabaseProvider } from '../../providers/database/database';
 import { MedicamentPage } from '../medicament/medicament';
+import { FilterPipe } from "../../pipes/filter/filter";
 
 @Component({
     selector: 'page-medikit',
     templateUrl: 'medikit.html'
-  })
+ })
   export class MedikitPage {
     tabBarElement: any;
     splash = true;

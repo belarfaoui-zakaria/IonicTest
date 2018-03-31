@@ -4,7 +4,7 @@ import { AjouterMedicamentPage } from './ajouter-medicament';
 
 @NgModule({
   declarations: [
-    AjouterMedicamentPage,
+    AjouterMedicamentPage
   ],
   imports: [
     IonicPageModule.forChild(AjouterMedicamentPage),

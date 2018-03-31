@@ -39,11 +39,17 @@ export class MedicamentPage {
                var date = moment(this.medicament.date_expiration);
                date.hours(23)
               this.presentToast();
-              this.localNotifications.schedule({
-                id: this.medicament.id,
-                text: this.medicament.DENOMINATION + " sera expirés procahinement",
-                at: date.toDate()
-              })
+
+              setTimeout( () => {
+                 this.localNotifications.schedule({
+                  id: this.medicament.id,
+                  text: this.medicament.DENOMINATION + " sera expirés procahinement",
+                  at: date.toDate()
+                 })               
+              }, 2000);
+
+
+
            }
            return this.medicament;
         }).catch(e => {
