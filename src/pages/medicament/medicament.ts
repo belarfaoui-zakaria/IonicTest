@@ -62,12 +62,20 @@ export class MedicamentPage {
   }
 
   back(){
-    this.navCtrl.push(MedikitPage)
+    this.navCtrl.push(MedikitPage);
   }
 
-  presentToast() {
+  delete(){
+    console.log(this.medicament)
+    this.database.execute(" delete from medicaments where id = ? ", [this.medicament.id]).then( () => {
+      this.presentToast("Medicament supprimer avec success");
+      this.back();
+    })
+  }
+
+  presentToast(message = null) {
     let toast = this.toastCtrl.create({
-      message: 'Une notification programmée pour ce medicament',
+      message: message || 'Une notification programmée pour ce medicament',
       duration: 3000,
       position: 'bottom',
       cssClass: "toast-success",

@@ -16,8 +16,9 @@
  
   <ion-scroll style="width:100%;height:80%" scrollY="true">
     <ion-col scroll="true">
+      <h3 *ngIf="!results || results && results.length == 0" text-center style="color:#aaa;font-size:16px;margin: 20px;margin-top: 50%;text-transform: none;"> <strong style="font-size:1.5em;color:black;">Oups !!</strong> <br>Veuillez introduire le medicament desirer dans la barre de recherche.</h3>
       <ion-item *ngFor="let medicament of results">
-        <div class="item-content">
+        <div  class="item-content">
 
               <h2><strong>{{ medicament.DENOMINATION }}</strong></h2>
               <h3> <small>{{ medicament.LIBELLE_PRESENTATION }}</small></h3>              

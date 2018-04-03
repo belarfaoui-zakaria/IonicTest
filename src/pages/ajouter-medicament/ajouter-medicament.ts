@@ -43,7 +43,12 @@ export class AjouterMedicamentPage {
     //   {DENOMINATION: "Doliprane", LIBELLE_PRESENTATION: "doli 2"}
     // ]
 
-   
+   if(this.searchText == "")
+   {
+     this.results = new Array();
+     return;
+   }
+
     this.database.execute("select CIS_BDPM.CIS, CIP7 as CIP, DENOMINATION, LIBELLE_PRESENTATION from CIS_BDPM inner join CIS_CIP_BDPM on CIS_BDPM.CIS = CIS_CIP_BDPM.CIS where DENOMINATION like ? limit 0, 50", ["%"+this.searchText.split(" ").join("%")+"%"]).then( (e) => {
       this.results = new Array()
       for (var i = 0; i < e.rows.length ;i++) {
