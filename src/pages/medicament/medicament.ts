@@ -36,16 +36,19 @@ export class MedicamentPage {
            this.medicament = k.rows.item(0);
            console.log(medicament)
            if(medicament.is_new){
-               var date = moment(this.medicament.date_expiration);
+               var date = moment(this.medicament.date_expiration, "DD/MM/YYYY");
+
                date.hours(23)
               this.presentToast();
-
+ 
               setTimeout( () => {
-                 this.localNotifications.schedule({
+                 var notification = {
                   id: this.medicament.id,
                   text: this.medicament.DENOMINATION + " sera expirés procahinement",
-                  at: date.toDate()
-                 })               
+                  trigger: {at: date.toDate()}
+                 }
+
+                 this.localNotifications.schedule(notification);               
               }, 2000);
 
 
@@ -66,7 +69,7 @@ export class MedicamentPage {
   }
 
   delete(){
-    console.log(this.medicament)
+
     this.database.execute(" delete from medicaments where id = ? ", [this.medicament.id]).then( () => {
       this.presentToast("Medicament supprimer avec success");
       this.back();

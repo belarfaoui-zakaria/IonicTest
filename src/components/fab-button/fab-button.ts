@@ -42,6 +42,7 @@ export class FabButtonComponent {
         var parser = new DatamatrixMedicamentData(result.text);
         parser.getCis(this.database).then( e => {
           var medicament = new Medicament(parser);
+            console.log(parser.getExpiration())
            medicament.setExpiration(parser.getExpiration().format("DD/MM/YYYY"))
            medicament.setCip(parser.getCip())
            medicament.setCis(e.CIS)

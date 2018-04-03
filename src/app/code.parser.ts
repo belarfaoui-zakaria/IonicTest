@@ -104,7 +104,7 @@ export class CodeParser{
                     var year = "20" + listOfValues[key].substring(0, 2);
                     var month = listOfValues[key].substring(2, 4);
                     var day = listOfValues[key].substring(4, 6);
-                    listOfValues[key] =  moment(new Date(year + "/" + month + "/" + day)); // move value to correct decimal point
+                    listOfValues[key] = moment(day+"/"+month+"/"+year, "DD/MM/YYYY"); // move value to correct decimal point
                 }
                 break;
             case "datetime":
